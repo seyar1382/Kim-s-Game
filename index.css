@@ -1,0 +1,117 @@
+body {
+  background: linear-gradient(#01021f, #0c115a, #3d1562);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100vh; /* full viewport height to ensure background covers entire page */
+}
+
+/* ---------nav----------- */
+
+#logo-img {
+  width: 60px;
+  margin-right: 28px; /* space between logo and links */
+}
+
+.navbar-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* logo left, links right */
+  background-color: #233674;
+  height: 80px;
+  margin: 20px 100px; /* keep outer spacing from the page edges */
+  padding: 0 24px; /* inner horizontal padding for consistent spacing */
+  border-radius: 40px;
+}
+
+.list ul {
+  display: flex;
+  align-items: center;
+  gap: 28px; /* consistent spacing between items */
+}
+
+.list li {
+  margin: 0; /* gap handles spacing now */
+  list-style: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Active/selected nav item */
+.list li.active {
+  border-bottom: 3px solid #ff3b30; /* red underline to indicate selected */
+}
+
+/* Responsive tweaks: tighten spacing and sizes on small screens */
+@media (max-width: 600px) {
+  #logo-img {
+    width: 48px;
+    margin-right: 14px;
+  }
+  .navbar-cont {
+    height: 64px;
+    margin: 12px 16px;
+    padding: 0 12px;
+  }
+  .list ul {
+    gap: 12px;
+  }
+  .list li {
+    font-size: 16px;
+  }
+}
+
+/* ---------body---------------- */
+main h1,
+p {
+  text-align: center;
+  font-size: 45px;
+}
+
+main p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  background-color: #233674;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 0 100px; /* horizontal spacing from page edges */
+}
+
+.level-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.game-container p {
+  font-weight: bold; /* make the first container's text bold */
+}
+
+.game-item {
+  padding: 20px;
+  border-radius: 20px;
+  flex: 1; /* equal width for all items */
+  text-align: center;
+  height: 250px;
+}
+
+.easy {
+  background: linear-gradient(#64b035, #4caf50, #27852b);
+}
+
+.level-container .game-item.medium {
+  background: linear-gradient(#f1c40f, #f39c12, #e67e22);
+}
+
+.level-container .game-item.hard {
+  background: linear-gradient(#e74c3c, #c0392b, #a93226);
+}
