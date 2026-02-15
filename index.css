@@ -37,6 +37,16 @@ body {
   font-size: 20px;
 }
 
+.list li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease; /* smooth color change on hover */
+}
+
+.list li a:hover {
+  color: #ff3b30; /* red color on hover for better visibility */
+}
+
 /* Active/selected nav item */
 .list li.active {
   border-bottom: 3px solid #ff3b30; /* red underline to indicate selected */
@@ -92,6 +102,13 @@ main p {
   width: 100%;
 }
 
+.game-item:hover {
+  transform: scale(1.02); /* subtle zoom effect on hover */
+  transition: transform 0.3s ease; /* smooth transition for the zoom effect */
+  cursor: pointer;
+  opacity: 0.95; /* slight fade effect on hover for better feedback */
+}
+
 .game-container p {
   font-weight: bold; /* make the first container's text bold */
 }
@@ -114,4 +131,25 @@ main p {
 
 .level-container .game-item.hard {
   background: linear-gradient(#e74c3c, #c0392b, #a93226);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+i {
+  font-size: 48px;
+}
+
+.level {
+  font-size: 24px;
+  font-weight: bold;
 }
