@@ -94,6 +94,20 @@ main p {
   margin: 0 100px; /* horizontal spacing from page edges */
 }
 
+.images-container {
+  display: flex;
+  flex-wrap: wrap; /* allow images to wrap to next line if needed */
+  gap: 20px; /* space between images */
+  margin-top: 20px;
+}
+
+.images-container .game-image {
+  width: 120px;
+  /* object-fit: cover; */
+  border-radius: 12px;
+  border: 2px solid #fff; /* white border for better visibility */
+}
+
 .level-container {
   display: flex;
   align-items: center;
