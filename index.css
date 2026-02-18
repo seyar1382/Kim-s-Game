@@ -139,8 +139,8 @@ main p {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 40px;
-  background-color: transparent;
+  margin-top: 20px;
+  background-color: rgb(221, 217, 217, 0.2);
   border-radius: 12px;
   padding: 20px;
 }
@@ -152,4 +152,6 @@ i {
 .level {
   font-size: 24px;
   font-weight: bold;
+  display: block;
+  margin-top: 30px;
 }
