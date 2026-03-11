@@ -1,3 +1,9 @@
+const colorInput = document.querySelector(".input-js");
+
+colorInput.addEventListener("input", (event) => {
+  document.body.style.background = event.target.value;
+});
+
 document.querySelector(".easy-js").addEventListener("click", () => {
   document.querySelector(".game-container").innerHTML = "";
   buildEasyGame();
@@ -56,28 +62,53 @@ function displayImages(count) {
   });
 }
 
+function timeOut(count) {
+  const gameContainer = document.querySelector(".game-container");
+  const inputContainer = document.createElement("div");
+  inputContainer.classList.add("input-container");
+  gameContainer.appendChild(inputContainer);
+  // here i tried using forEach but it was giving me an error and I realised it is not an array so i used for loop instead
+  for (let i = 0; i < count; i++) {
+    const inputElement = document.createElement("input");
+    inputElement.type = "text";
+    inputElement.placeholder = `Item ${i + 1}`;
+    inputElement.classList.add("game-input");
+    inputContainer.appendChild(inputElement);
+  }
+}
+
 function buildEasyGame() {
   const gameContainer = document.querySelector(".game-container");
   gameContainer.innerHTML = `
     <p>Easy Level: Memorize the following 8 items</p>
   `;
-  shuffleArray(images);
-  const randomImages = getRandomImages(8);
   displayImages(8);
+  setTimeout(() => {
+    gameContainer.innerHTML = "";
+    timeOut(8);
+  }, 20000);
 }
 
 function buildMediumGame() {
   const gameContainer = document.querySelector(".game-container");
   gameContainer.innerHTML = `
-    <h2>Medium Level</h2>
-    <p></p>
+    <p>Medium Level: Memorize the following 10 items</p>
   `;
+  displayImages(10);
+  setTimeout(() => {
+    gameContainer.innerHTML = "";
+    timeOut(10);
+  }, 15000);
 }
 
 function buildHardGame() {
   const gameContainer = document.querySelector(".game-container");
   gameContainer.innerHTML = `
-    <h2>Hard Level</h2>
-    <p></p>
+    <p>Hard Level: Memorize the following 12 items</p>
   `;
+  displayImages(12);
+  setTimeout(() => {
+    gameContainer.innerHTML = "";
+    timeOut(12);
+  }, 10000);
 }
