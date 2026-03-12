@@ -117,13 +117,26 @@ main p {
   margin-bottom: 10px;
   color: white;
   font-size: 18px;
+  width: 400px;
 }
 
 .game-container .input-container {
   display: grid; /* use grid layout for inputs */
-  grid-template-columns: 1fr 1fr 1fr; /* 3 columns for inputs */
+  grid-template-columns: 1fr 1fr; /* 2 columns for inputs */
   gap: 20px; /* space between inputs */
-  width: 100%; /* full width to align with images container */
+  /* width: 100%; full width to align with images container */
+}
+
+.submit-button {
+  grid-column: span 2; /* make submit button span both columns */
+  padding: 20px;
+  background-color: #df5851; /* red background for submit button */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* smooth hover effect */
 }
 
 .level-container {

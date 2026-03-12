@@ -75,6 +75,31 @@ function timeOut(count) {
     inputElement.classList.add("game-input");
     inputContainer.appendChild(inputElement);
   }
+
+  const submitButton = document.createElement("button");
+  submitButton.textContent = "Submit";
+  submitButton.type = "submit";
+  submitButton.classList.add("submit-button");
+  inputContainer.appendChild(submitButton);
+}
+
+function timer(count) {
+  const timerParagraph = document.createElement("p");
+  timerParagraph.classList.add("timer");
+  timerParagraph.textContent = "Time Left: " + count;
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.appendChild(timerParagraph);
+  const timerElement = document.querySelector(".timer");
+  let timeLeft = count;
+  const timer = setInterval(() => {
+    timeLeft--;
+    timerElement.textContent = "Time Left: " + timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+    } else if (timeLeft <= 5) {
+      timerElement.style.color = "#e74c3c"; // change color to red when time is less than or equal to 5 seconds
+    }
+  }, 1000);
 }
 
 function buildEasyGame() {
@@ -82,6 +107,7 @@ function buildEasyGame() {
   gameContainer.innerHTML = `
     <p>Easy Level: Memorize the following 8 items</p>
   `;
+  timer(20);
   displayImages(8);
   setTimeout(() => {
     gameContainer.innerHTML = "";
@@ -94,6 +120,7 @@ function buildMediumGame() {
   gameContainer.innerHTML = `
     <p>Medium Level: Memorize the following 10 items</p>
   `;
+  timer(15);
   displayImages(10);
   setTimeout(() => {
     gameContainer.innerHTML = "";
@@ -106,9 +133,10 @@ function buildHardGame() {
   gameContainer.innerHTML = `
     <p>Hard Level: Memorize the following 12 items</p>
   `;
+  timer(10);
   displayImages(12);
   setTimeout(() => {
     gameContainer.innerHTML = "";
     timeOut(12);
-  }, 10000);
+  }, 1000);
 }
