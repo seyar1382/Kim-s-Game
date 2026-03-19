@@ -32,6 +32,18 @@ const images = [
   "images/cup.png",
   "images/spoon.png",
   "images/scissors.png",
+  "images/balloon.png",
+  "images/umbrella.png",
+  "images/clock.png",
+  "images/bell.png",
+  "images/candle.png",
+  "images/crown.png",
+  "images/diamond.png",
+  "images/dice.png",
+  "images/gift.png",
+  "images/magnet.png",
+  "images/microphone.png",
+  "images/telescope.png",
 ];
 
 function shuffleArray(array) {

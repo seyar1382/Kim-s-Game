@@ -3,7 +3,6 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  height:; /* full viewport height to ensure background covers entire page */
 }
 
 /* ---------nav----------- */
