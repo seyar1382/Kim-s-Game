@@ -19,7 +19,7 @@ body {
   background-color: #233674;
   backdrop-filter: blur(50px); /* subtle blur for a frosted glass effect */
   height: 80px;
-  margin: 20px 100px; /* keep outer spacing from the page edges */
+  margin: 30px 100px; /* keep outer spacing from the page edges */
   padding: 0 40px; /* inner horizontal padding for consistent spacing */
   border-radius: 40px;
 }
@@ -81,6 +81,32 @@ p {
 main p {
   font-size: 20px;
   margin-bottom: 40px;
+}
+
+.timer {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.timeout-message {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+  50% {
+    transform: scale(1.05);
+    color: #ff3b30; /* red color at the peak of the pulse */
+  }
+  100% {
+    transform: scale(1);
+    color: white;
+  }
 }
 
 .game-container {

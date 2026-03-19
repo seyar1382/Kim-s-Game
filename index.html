@@ -12,22 +12,26 @@
     <script src="index.js" type="module"></script>
   </head>
   <body>
-    <nav>
-      <div class="navbar-cont">
-        <div class="logo-cont">
-          <img id="logo-img" src="images/Mind.png" alt="mind logo" />
+    <header>
+      <nav>
+        <div class="navbar-cont">
+          <div class="logo-cont">
+            <a href="index.html"
+              ><img id="logo-img" src="images/Mind.png" alt="mind logo"
+            /></a>
+          </div>
+          <div class="list">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <input class="input-js" type="color" />
+            </ul>
+          </div>
         </div>
-        <div class="list">
-          <ul>
-            <li class="active"><a href="#home">Home</a></li>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <input class="input-js" type="color" />
-          </ul>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
     <main>
       <h1>Kim's Game</h1>
       <p>Test your memory skills!</p>
@@ -39,7 +43,7 @@
             <span class="level">Easy</span>
             <div class="info">
               <span>20 seconds</span>
-              <span>8 items</span>
+              <span>6 items</span>
             </div>
           </div>
           <div class="game-item medium medium-js">
@@ -47,7 +51,7 @@
             <span class="level">Medium</span>
             <div class="info">
               <span>15 seconds</span>
-              <span>10 items</span>
+              <span>8 items</span>
             </div>
           </div>
           <div class="game-item hard hard-js">
@@ -55,7 +59,7 @@
             <span class="level">Hard</span>
             <div class="info">
               <span>10 seconds</span>
-              <span>12 items</span>
+              <span>10 items</span>
             </div>
           </div>
         </div>

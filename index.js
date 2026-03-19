@@ -86,6 +86,10 @@ function displayImages(count) {
 
 function timeOut(count) {
   const gameContainer = document.querySelector(".game-container");
+  const timeoutMessage = document.createElement("p");
+  timeoutMessage.textContent = "Time's up! Now, enter the items you remember.";
+  timeoutMessage.classList.add("timeout-message");
+  gameContainer.appendChild(timeoutMessage);
   const inputContainer = document.createElement("div");
   inputContainer.classList.add("input-container");
   gameContainer.appendChild(inputContainer);
@@ -119,7 +123,7 @@ function timer(count) {
     if (timeLeft <= 0) {
       clearInterval(timer);
     } else if (timeLeft <= 5) {
-      timerElement.style.color = "#e74c3c"; // change color to red when time is less than or equal to 5 seconds
+      timerElement.style.animation = "infinite 1s pulse";
     }
   }, 1000);
 }
@@ -127,38 +131,38 @@ function timer(count) {
 function buildEasyGame() {
   const gameContainer = document.querySelector(".game-container");
   gameContainer.innerHTML = `
-    <p>Easy Level: Memorize the following 8 items</p>
+    <p>Easy Level: Memorize the following 6 items</p>
   `;
   timer(20);
-  displayImages(8);
+  displayImages(6);
   setTimeout(() => {
     gameContainer.innerHTML = "";
-    timeOut(8);
+    timeOut(6);
   }, 20000);
 }
 
 function buildMediumGame() {
   const gameContainer = document.querySelector(".game-container");
   gameContainer.innerHTML = `
-    <p>Medium Level: Memorize the following 10 items</p>
+    <p>Medium Level: Memorize the following 8 items</p>
   `;
   timer(15);
-  displayImages(10);
+  displayImages(8);
   setTimeout(() => {
     gameContainer.innerHTML = "";
-    timeOut(10);
+    timeOut(8);
   }, 15000);
 }
 
 function buildHardGame() {
   const gameContainer = document.querySelector(".game-container");
   gameContainer.innerHTML = `
-    <p>Hard Level: Memorize the following 12 items</p>
+    <p>Hard Level: Memorize the following 10 items</p>
   `;
   timer(10);
-  displayImages(12);
+  displayImages(10);
   setTimeout(() => {
     gameContainer.innerHTML = "";
-    timeOut(12);
+    timeOut(10);
   }, 10000);
 }
