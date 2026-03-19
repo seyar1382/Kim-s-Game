@@ -3,7 +3,7 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  height: 100vh; /* full viewport height to ensure background covers entire page */
+  height:; /* full viewport height to ensure background covers entire page */
 }
 
 /* ---------nav----------- */
@@ -16,12 +16,12 @@ body {
 .navbar-cont {
   display: flex;
   align-items: center;
-  justify-content: center; /* logo left, links right */
+  justify-content: space-between; /* logo left, links right */
   background-color: #233674;
   backdrop-filter: blur(50px); /* subtle blur for a frosted glass effect */
   height: 80px;
   margin: 20px 100px; /* keep outer spacing from the page edges */
-  padding: 0 24px; /* inner horizontal padding for consistent spacing */
+  padding: 0 40px; /* inner horizontal padding for consistent spacing */
   border-radius: 40px;
 }
 
@@ -100,13 +100,31 @@ main p {
   flex-wrap: wrap; /* allow images to wrap to next line if needed */
   gap: 20px; /* space between images */
   margin-top: 20px;
+  /* make the images and labels stack vertically */
+  justify-content: center; /* center the images and labels horizontally */
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .images-container .game-image {
-  width: 120px;
+  width: 140px;
+  height: 140px;
   /* object-fit: cover; */
   border-radius: 12px;
   border: 2px solid #fff; /* white border for better visibility */
+  padding: 20px;
+}
+
+.image-label {
+  /* make the label text below the image */
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
 }
 
 .game-container .input-container .game-input {
@@ -137,6 +155,10 @@ main p {
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease; /* smooth hover effect */
+}
+
+.submit-button:hover {
+  background-color: #c0392b; /* darker red on hover */
 }
 
 .level-container {

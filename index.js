@@ -54,11 +54,21 @@ function displayImages(count) {
   imagesContainer.classList.add("images-container");
   gameContainer.appendChild(imagesContainer);
   selectedImages.forEach((src, index) => {
+    const imageItem = document.createElement("div");
+    imageItem.classList.add("image-item");
     const img = document.createElement("img");
+    const imgName = src.split("/").pop().split(".")[0];
+    const capitalizedImgName =
+      imgName.charAt(0).toUpperCase() + imgName.slice(1);
+    const label = document.createElement("p");
+    label.textContent = capitalizedImgName;
+    label.classList.add("image-label");
     img.src = src;
     img.alt = `Image ${index + 1}`;
     img.classList.add("game-image");
-    imagesContainer.appendChild(img);
+    imageItem.appendChild(img);
+    imageItem.appendChild(label);
+    imagesContainer.appendChild(imageItem);
   });
 }
 
@@ -138,5 +148,5 @@ function buildHardGame() {
   setTimeout(() => {
     gameContainer.innerHTML = "";
     timeOut(12);
-  }, 1000);
+  }, 10000);
 }
