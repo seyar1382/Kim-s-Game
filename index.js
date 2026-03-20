@@ -19,6 +19,8 @@ document.querySelector(".hard-js").addEventListener("click", () => {
   buildHardGame();
 });
 
+let currentCorrectAnswers = [];
+
 const images = [
   "images/apple.png",
   "images/key.png",
@@ -61,6 +63,9 @@ function getRandomImages(count) {
 
 function displayImages(count) {
   const selectedImages = getRandomImages(count);
+  currentCorrectAnswers = selectedImages.map((src) =>
+    src.split("/").pop().split(".")[0].toLowerCase(),
+  );
   const gameContainer = document.querySelector(".game-container");
   const imagesContainer = document.createElement("div");
   imagesContainer.classList.add("images-container");
@@ -101,12 +106,77 @@ function timeOut(count) {
     inputElement.classList.add("game-input");
     inputContainer.appendChild(inputElement);
   }
-
   const submitButton = document.createElement("button");
   submitButton.textContent = "Submit";
   submitButton.type = "submit";
   submitButton.classList.add("submit-button");
   inputContainer.appendChild(submitButton);
+
+  submitButton.addEventListener("click", () => {
+    const inputs = document.querySelectorAll(".game-input");
+    const userInputs = Array.from(inputs).map((input) =>
+      input.value.trim().toLowerCase(),
+    );
+    const uniqueUserAnswers = new Set(userInputs);
+    let score = 0;
+    uniqueUserAnswers.forEach((userAnswer) => {
+      if (currentCorrectAnswers.includes(userAnswer)) {
+        score++;
+      }
+    });
+    const gameContainer = document.querySelector(".game-container");
+    gameContainer.innerHTML = "";
+    const resultMessage = document.createElement("p");
+    resultMessage.textContent = `Score: ${score}/${currentCorrectAnswers.length}`;
+    resultMessage.classList.add("result-message");
+    gameContainer.appendChild(resultMessage);
+    const scoreMessage = document.createElement("p");
+    scoreMessage.textContent = `You remembered ${score} out of ${currentCorrectAnswers.length} items!`;
+    scoreMessage.classList.add("score-message");
+    gameContainer.appendChild(scoreMessage);
+
+    displayCorrectAnswers();
+    displayUserAnswers(userInputs);
+  });
+}
+
+function displayCorrectAnswers() {
+  const correctAnswers = document.createElement("div");
+  correctAnswers.classList.add("correct-answers");
+  const correctAnswersTitle = document.createElement("h2");
+  correctAnswersTitle.textContent = "Correct Answers:";
+  correctAnswersTitle.classList.add("correct-answers-title");
+  correctAnswers.appendChild(correctAnswersTitle);
+  currentCorrectAnswers.forEach((answer) => {
+    const answerItem = document.createElement("p");
+    const capitalizedAnswer = answer.charAt(0).toUpperCase() + answer.slice(1);
+    answerItem.textContent = capitalizedAnswer;
+    answerItem.classList.add("correct-answer-item");
+    correctAnswers.appendChild(answerItem);
+  });
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.appendChild(correctAnswers);
+}
+
+function displayUserAnswers(userInputs) {
+  const userAnswersContainer = document.createElement("div");
+  userAnswersContainer.classList.add("user-answers");
+  const userAnswersTitle = document.createElement("h2");
+  userAnswersTitle.textContent = "Your Answers:";
+  userAnswersTitle.classList.add("user-answers-title");
+  userAnswersContainer.appendChild(userAnswersTitle);
+  userInputs
+    .filter((answer) => answer !== "")
+    .forEach((answer) => {
+      const answerItem = document.createElement("p");
+      const capitalizedAnswer =
+        answer.charAt(0).toUpperCase() + answer.slice(1);
+      answerItem.textContent = capitalizedAnswer;
+      answerItem.classList.add("user-answer-item");
+      userAnswersContainer.appendChild(answerItem);
+    });
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.appendChild(userAnswersContainer);
 }
 
 function timer(count) {

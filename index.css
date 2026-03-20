@@ -186,6 +186,64 @@ main p {
   background-color: #c0392b; /* darker red on hover */
 }
 
+.result-message {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff3b30; /* red color for result messages */
+}
+
+.score-message {
+  margin-top: 0;
+}
+
+.correct-answers {
+  background-color: rgb(221, 217, 217, 0.2);
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.correct-answer-item {
+  background-color: #4caf50; /* green background for correct answers */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.correct-answers-title {
+  display: block;
+  width: 100%;
+}
+
+.user-answers {
+  background-color: rgb(221, 217, 217, 0.2);
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.user-answers .user-answer-item {
+  background-color: #3498db; /* blue background for user answers */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.user-answers-title {
+  display: block;
+  width: 100%;
+}
+
 .level-container {
   display: flex;
   align-items: center;
