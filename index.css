@@ -1,7 +1,7 @@
 body {
   background: linear-gradient(#01021f, #0c115a, #3d1562);
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
 }
 
@@ -14,11 +14,17 @@ body {
 
 .navbar-cont {
   display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* ensure navbar is above other content */
   align-items: center;
   justify-content: space-between; /* logo left, links right */
-  background-color: #233674;
-  backdrop-filter: blur(50px); /* subtle blur for a frosted glass effect */
+  background-color: rgba(157, 164, 189, 0.2);
+  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
+  border-top: 0.5px solid #d2d4d8;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   height: 80px;
+  width: calc(100% - 280px); /* full width minus horizontal margins */
   margin: 30px 100px; /* keep outer spacing from the page edges */
   padding: 0 40px; /* inner horizontal padding for consistent spacing */
   border-radius: 40px;
@@ -72,14 +78,28 @@ body {
 }
 
 /* ---------body---------------- */
+
+#title {
+}
+
+main {
+  margin-top: 150px;
+}
+
 main h1,
-p {
+main h2 {
   text-align: center;
   font-size: 45px;
 }
 
-main p {
+main h2 {
   font-size: 20px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+main p {
+  font-size: 25px;
   margin-bottom: 40px;
 }
 
@@ -114,9 +134,13 @@ main p {
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
-  background-color: #233674;
+  background-color: rgba(157, 164, 189, 0.2);
+  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
   padding: 20px;
   border-radius: 20px;
+  border-top: 0.5px solid #d2d4d8;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  /* border-bottom: 1px solid #d2d4d8; */
   margin: 0 100px; /* horizontal spacing from page edges */
 }
 
@@ -267,6 +291,7 @@ main p {
   justify-content: center;
   gap: 20px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .game-item:hover {

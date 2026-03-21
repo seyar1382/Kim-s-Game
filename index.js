@@ -104,14 +104,25 @@ function timeOut(count) {
     inputElement.type = "text";
     inputElement.placeholder = `Item ${i + 1}`;
     inputElement.classList.add("game-input");
+    inputElement.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submitButton.click();
+      }
+    });
     inputContainer.appendChild(inputElement);
   }
+
   const submitButton = document.createElement("button");
   submitButton.textContent = "Submit";
   submitButton.type = "submit";
   submitButton.classList.add("submit-button");
   inputContainer.appendChild(submitButton);
 
+  displayResults(submitButton);
+}
+
+function displayResults(submitButton) {
   submitButton.addEventListener("click", () => {
     const inputs = document.querySelectorAll(".game-input");
     const userInputs = Array.from(inputs).map((input) =>
@@ -137,6 +148,7 @@ function timeOut(count) {
 
     displayCorrectAnswers();
     displayUserAnswers(userInputs);
+
     const playAgainButton = document.createElement("button");
     playAgainButton.textContent = "Play Again";
     playAgainButton.classList.add("play-again-button");
