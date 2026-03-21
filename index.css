@@ -244,6 +244,23 @@ main p {
   width: 100%;
 }
 
+.play-again-button {
+  padding: 20px;
+  margin: 0;
+  width: 93%;
+  background-color: #3498db; /* blue background for play again button */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* smooth hover effect */
+}
+
+.play-again-button:hover {
+  background-color: #2980b9; /* darker blue on hover */
+}
+
 .level-container {
   display: flex;
   align-items: center;
@@ -254,7 +271,6 @@ main p {
 
 .game-item:hover {
   transform: scale(1.02); /* subtle zoom effect on hover */
-  transition: transform 0.3s ease; /* smooth transition for the zoom effect */
   cursor: pointer;
   opacity: 0.95; /* slight fade effect on hover for better feedback */
 }
@@ -269,6 +285,7 @@ main p {
   flex: 1; /* equal width for all items */
   text-align: center;
   height: 250px;
+  transition: transform 0.3s ease-in-out; /* smooth transition for the zoom effect */
 }
 
 .easy {

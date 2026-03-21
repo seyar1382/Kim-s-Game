@@ -137,6 +137,14 @@ function timeOut(count) {
 
     displayCorrectAnswers();
     displayUserAnswers(userInputs);
+    const playAgainButton = document.createElement("button");
+    playAgainButton.textContent = "Play Again";
+    playAgainButton.classList.add("play-again-button");
+    playAgainButton.link = "index.html";
+    gameContainer.appendChild(playAgainButton);
+    playAgainButton.addEventListener("click", () => {
+      location.reload();
+    });
   });
 }
 
