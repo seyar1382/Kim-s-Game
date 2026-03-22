@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ---------nav----------- */
 
 #logo-img {
@@ -78,9 +82,6 @@ body {
 }
 
 /* ---------body---------------- */
-
-#title {
-}
 
 main {
   margin-top: 150px;
@@ -184,20 +185,19 @@ main p {
   margin-bottom: 10px;
   color: white;
   font-size: 18px;
-  width: 400px;
 }
 
 .game-container .input-container {
   display: grid; /* use grid layout for inputs */
   grid-template-columns: 1fr 1fr; /* 2 columns for inputs */
   gap: 20px; /* space between inputs */
-  /* width: 100%; full width to align with images container */
+  width: 90%; /* limit width of input container for better layout */
 }
 
 .submit-button {
   grid-column: span 2; /* make submit button span both columns */
   padding: 20px;
-  background-color: #df5851; /* red background for submit button */
+  background-color: #ff3b30; /* red background for submit button */
   color: white;
   border: none;
   border-radius: 10px;
@@ -271,8 +271,9 @@ main p {
 .play-again-button {
   padding: 20px;
   margin: 0;
+  margin-bottom: 20px;
   width: 93%;
-  background-color: #3498db; /* blue background for play again button */
+  background-color: #cc2e26; /* red background for play again button */
   color: white;
   border: none;
   border-radius: 10px;
@@ -282,7 +283,7 @@ main p {
 }
 
 .play-again-button:hover {
-  background-color: #2980b9; /* darker blue on hover */
+  background-color: #c0392b; /* darker red on hover */
 }
 
 .level-container {
@@ -350,6 +351,20 @@ i {
 
 /* ...................introduction.............. */
 
-.introduction {
+#introduction {
   margin-top: 200px;
+  text-align: center;
+}
+
+/* --------------------------footer----------------------------- */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(157, 164, 189, 0.2);
+  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
+  border-top: 0.5px solid #d2d4d8;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  border-radius: 40px;
+  margin: 30px 100px; /* keep outer spacing from the page edges */
 }

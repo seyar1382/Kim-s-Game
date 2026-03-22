@@ -4,17 +4,23 @@ colorInput.addEventListener("input", (event) => {
   document.body.style.background = event.target.value;
 });
 
+const clickAudio = new Audio("newclick.mov");
+clickAudio.volume = 0.2;
+
 document.querySelector(".easy-js").addEventListener("click", () => {
+  clickAudio.play();
   document.querySelector(".game-container").innerHTML = "";
   buildEasyGame();
 });
 
 document.querySelector(".medium-js").addEventListener("click", () => {
+  clickAudio.play();
   document.querySelector(".game-container").innerHTML = "";
   buildMediumGame();
 });
 
 document.querySelector(".hard-js").addEventListener("click", () => {
+  clickAudio.play();
   document.querySelector(".game-container").innerHTML = "";
   buildHardGame();
 });
@@ -124,6 +130,7 @@ function timeOut(count) {
 
 function displayResults(submitButton) {
   submitButton.addEventListener("click", () => {
+    clickAudio.play();
     const inputs = document.querySelectorAll(".game-input");
     const userInputs = Array.from(inputs).map((input) =>
       input.value.trim().toLowerCase(),
@@ -141,6 +148,17 @@ function displayResults(submitButton) {
     resultMessage.textContent = `Score: ${score}/${currentCorrectAnswers.length}`;
     resultMessage.classList.add("result-message");
     gameContainer.appendChild(resultMessage);
+
+    if (score >= currentCorrectAnswers.length / 2) {
+      const applauseAudio = new Audio("applause.mp3");
+      applauseAudio.play();
+      applauseAudio.volume = 0.3;
+    } else {
+      const failAudio = new Audio("fail.mp3");
+      failAudio.play();
+      failAudio.volume = 0.3;
+    }
+
     const scoreMessage = document.createElement("p");
     scoreMessage.textContent = `You remembered ${score} out of ${currentCorrectAnswers.length} items!`;
     scoreMessage.classList.add("score-message");
@@ -156,6 +174,7 @@ function displayResults(submitButton) {
     gameContainer.appendChild(playAgainButton);
     playAgainButton.addEventListener("click", () => {
       location.reload();
+      clickAudio.play();
     });
   });
 }
@@ -207,13 +226,19 @@ function timer(count) {
   gameContainer.appendChild(timerParagraph);
   const timerElement = document.querySelector(".timer");
   let timeLeft = count;
+  const timerAudio = new Audio("timer.mp3");
+  let audioStarted = false;
   const timer = setInterval(() => {
     timeLeft--;
     timerElement.textContent = "Time Left: " + timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-    } else if (timeLeft <= 5) {
+    if (timeLeft <= 5 && !audioStarted) {
+      timerAudio.play();
+      timerAudio.volume = 0.3;
+      audioStarted = true;
       timerElement.style.animation = "infinite 1s pulse";
+    } else if (timeLeft <= 0) {
+      timerAudio.pause();
+      clearInterval(timer);
     }
   }, 1000);
 }
@@ -256,3 +281,6 @@ function buildHardGame() {
     timeOut(10);
   }, 10000);
 }
+
+const audioElement = document.querySelector(".audio");
+audioElement.volume = 0.1;
