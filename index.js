@@ -4,25 +4,43 @@ colorInput.addEventListener("input", (event) => {
   document.body.style.background = event.target.value;
 });
 
-const clickAudio = new Audio("newclick.mov");
+const clickAudio = new Audio("audio/newclick.mov");
 clickAudio.volume = 0.2;
 
 document.querySelector(".easy-js").addEventListener("click", () => {
   clickAudio.play();
-  document.querySelector(".game-container").innerHTML = "";
-  buildEasyGame();
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.classList.add("fade-out");
+  setTimeout(() => {
+    audioElement.play();
+    gameContainer.innerHTML = "";
+    gameContainer.classList.remove("fade-out");
+    buildEasyGame();
+  }, 500);
 });
 
 document.querySelector(".medium-js").addEventListener("click", () => {
   clickAudio.play();
-  document.querySelector(".game-container").innerHTML = "";
-  buildMediumGame();
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.classList.add("fade-out");
+  setTimeout(() => {
+    audioElement.play();
+    gameContainer.innerHTML = "";
+    gameContainer.classList.remove("fade-out");
+    buildMediumGame();
+  }, 500);
 });
 
 document.querySelector(".hard-js").addEventListener("click", () => {
   clickAudio.play();
-  document.querySelector(".game-container").innerHTML = "";
-  buildHardGame();
+  const gameContainer = document.querySelector(".game-container");
+  gameContainer.classList.add("fade-out");
+  setTimeout(() => {
+    audioElement.play();
+    gameContainer.innerHTML = "";
+    gameContainer.classList.remove("fade-out");
+    buildHardGame();
+  }, 500);
 });
 
 let currentCorrectAnswers = [];
@@ -92,6 +110,10 @@ function displayImages(count) {
     imageItem.appendChild(img);
     imageItem.appendChild(label);
     imagesContainer.appendChild(imageItem);
+    // Add smooth entry animation with stagger
+    setTimeout(() => {
+      imageItem.classList.add("animate-in");
+    }, index * 200);
   });
 }
 
@@ -150,11 +172,11 @@ function displayResults(submitButton) {
     gameContainer.appendChild(resultMessage);
 
     if (score >= currentCorrectAnswers.length / 2) {
-      const applauseAudio = new Audio("applause.mp3");
+      const applauseAudio = new Audio("audio/newapplause.mov");
       applauseAudio.play();
       applauseAudio.volume = 0.3;
     } else {
-      const failAudio = new Audio("fail.mp3");
+      const failAudio = new Audio("audio/fail.mp3");
       failAudio.play();
       failAudio.volume = 0.3;
     }
@@ -174,7 +196,6 @@ function displayResults(submitButton) {
     gameContainer.appendChild(playAgainButton);
     playAgainButton.addEventListener("click", () => {
       location.reload();
-      clickAudio.play();
     });
   });
 }
@@ -226,7 +247,7 @@ function timer(count) {
   gameContainer.appendChild(timerParagraph);
   const timerElement = document.querySelector(".timer");
   let timeLeft = count;
-  const timerAudio = new Audio("timer.mp3");
+  const timerAudio = new Audio("audio/timer.mp3");
   let audioStarted = false;
   const timer = setInterval(() => {
     timeLeft--;
@@ -283,4 +304,4 @@ function buildHardGame() {
 }
 
 const audioElement = document.querySelector(".audio");
-audioElement.volume = 0.1;
+audioElement.volume = 0.05;

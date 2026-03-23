@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@400..800&display=swap");
+
 body {
   background: linear-gradient(#01021f, #0c115a, #3d1562);
   color: white;
   font-family: "Inter", sans-serif;
   margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Syne", sans-serif;
+  text-align: center;
 }
 
 html {
@@ -87,6 +95,11 @@ main {
   margin-top: 150px;
 }
 
+#memory {
+  color: #ff3b30; /* red color for emphasis */
+  font-weight: bold;
+}
+
 main h1,
 main h2 {
   text-align: center;
@@ -143,6 +156,11 @@ main p {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   /* border-bottom: 1px solid #d2d4d8; */
   margin: 0 100px; /* horizontal spacing from page edges */
+  transition: opacity 0.5s ease-out;
+}
+
+.game-container.fade-out {
+  opacity: 0;
 }
 
 .images-container {
@@ -159,6 +177,14 @@ main p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* bounce-like transition */
+}
+
+.image-item.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .images-container .game-image {
@@ -166,13 +192,22 @@ main p {
   height: 140px;
   /* object-fit: cover; */
   border-radius: 12px;
-  border: 2px solid #fff; /* white border for better visibility */
+  border: 2px solid white; /* white border for better visibility */
   padding: 20px;
+  transition: all 0.3s ease-in-out; /* smooth transition for hover effects */
+}
+
+.images-container .game-image:hover {
+  transform: scale(1.05); /* subtle zoom effect on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white glow effect on hover */
+  rotate: 5deg; /* slight rotation on hover for a dynamic effect */
+  cursor: pointer;
+  opacity: 0.95; /* slight fade effect on hover for better feedback */
 }
 
 .image-label {
   /* make the label text below the image */
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 8px;
   text-align: center;
 }
