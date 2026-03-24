@@ -198,7 +198,6 @@ function displayResults(submitButton) {
     if (score > bestScore) {
       localStorage.setItem("bestScore", score);
     }
-
     const bestScoreMessage = document.createElement("p");
     bestScoreMessage.textContent = `Best Score: ${
       localStorage.getItem("bestScore") || 0
