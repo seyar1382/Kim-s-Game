@@ -175,16 +175,37 @@ function displayResults(submitButton) {
       const applauseAudio = new Audio("audio/newapplause.mov");
       applauseAudio.play();
       applauseAudio.volume = 0.3;
+      const wellDoneMessage = document.createElement("p");
+      wellDoneMessage.textContent = "Well done! You have a great memory!";
+      wellDoneMessage.classList.add("well-done-message");
+      gameContainer.appendChild(wellDoneMessage);
     } else {
       const failAudio = new Audio("audio/fail.mp3");
       failAudio.play();
       failAudio.volume = 0.3;
+      const tryAgainMessage = document.createElement("p");
+      tryAgainMessage.textContent = "Try again, you've got this!";
+      tryAgainMessage.classList.add("try-again-message");
+      gameContainer.appendChild(tryAgainMessage);
     }
 
     const scoreMessage = document.createElement("p");
     scoreMessage.textContent = `You remembered ${score} out of ${currentCorrectAnswers.length} items!`;
     scoreMessage.classList.add("score-message");
     gameContainer.appendChild(scoreMessage);
+
+    const bestScore = localStorage.getItem("bestScore") || 0;
+    if (score > bestScore) {
+      localStorage.setItem("bestScore", score);
+    }
+
+    const bestScoreMessage = document.createElement("p");
+    bestScoreMessage.textContent = `Best Score: ${
+      localStorage.getItem("bestScore") || 0
+    }`;
+    bestScoreMessage.classList.add("best-score-message");
+    const titleElement = document.querySelector(".title-container");
+    titleElement.appendChild(bestScoreMessage);
 
     displayCorrectAnswers();
     displayUserAnswers(userInputs);

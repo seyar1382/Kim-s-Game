@@ -251,8 +251,17 @@ main p {
   color: #ff3b30; /* red color for result messages */
 }
 
-.score-message {
+.score-message,
+.well-done-message,
+.try-again-message {
   margin-top: 0;
+}
+
+.best-score-message {
+  margin-top: 0;
+  color: #4caf50; /* green color for best score message */
+  text-align: center;
+  font-weight: bold;
 }
 
 .correct-answers {
