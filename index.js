@@ -4,6 +4,16 @@ colorInput.addEventListener("input", (event) => {
   document.body.style.background = event.target.value;
 });
 
+const inputValue = localStorage.getItem("backgroundColor");
+if (inputValue) {
+  document.body.style.background = inputValue;
+  colorInput.value = inputValue;
+}
+
+colorInput.addEventListener("change", (event) => {
+  localStorage.setItem("backgroundColor", event.target.value);
+});
+
 const clickAudio = new Audio("audio/newclick.mov");
 clickAudio.volume = 0.2;
 
@@ -184,7 +194,7 @@ function displayResults(submitButton) {
       failAudio.play();
       failAudio.volume = 0.3;
       const tryAgainMessage = document.createElement("p");
-      tryAgainMessage.textContent = "Try again, you've got this!";
+      tryAgainMessage.textContent = "Try again, you can do better!";
       tryAgainMessage.classList.add("try-again-message");
       gameContainer.appendChild(tryAgainMessage);
     }
