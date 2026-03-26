@@ -1,3 +1,31 @@
+/* -------- Mobile Hamburger Menu -------- */
+const hamburger = document.getElementById("hamburger");
+const navList = document.getElementById("navList");
+
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navList.classList.toggle("active");
+  });
+
+  // Close menu when a nav link is clicked
+  const navLinks = navList.querySelectorAll("a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navList.classList.remove("active");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".navbar-cont")) {
+      hamburger.classList.remove("active");
+      navList.classList.remove("active");
+    }
+  });
+}
+
 const colorInput = document.querySelector(".input-js");
 
 colorInput.addEventListener("input", (event) => {

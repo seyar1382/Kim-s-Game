@@ -1,0 +1,191 @@
+/* -----------------navbar----------------- */
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@keyframes menu-slide-down {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks: tighten spacing and sizes on tablets */
+@media (max-width: 900px) {
+  #logo-img {
+    width: 48px;
+    margin-right: 14px;
+  }
+  .navbar-cont {
+    height: 64px;
+    margin: 12px 100px;
+    padding: 0 12px;
+    width: calc(100% - 225px);
+    /* width: calc(100% - 280px); */
+  }
+  .list ul {
+    gap: 12px;
+  }
+  .list li {
+    font-size: 16px;
+  }
+}
+
+/* Mobile responsiveness: small phones and tablets */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-cont {
+    flex-wrap: wrap;
+    height: auto;
+    margin: 10px 100px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .logo-cont {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  #logo-img {
+    width: 44px;
+    margin-right: 12px;
+  }
+
+  .list {
+    width: 100%;
+    margin-top: 12px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+  }
+
+  .list.active {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .list ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+  }
+
+  .list li:last-child {
+    border-bottom: none;
+  }
+
+  .list li.active {
+    border-bottom: 3px solid #ff3b30;
+    padding-bottom: 9px;
+  }
+
+  .list li a {
+    display: block;
+  }
+
+  .input-js {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  /* -------main------- */
+
+  main {
+    margin-top: 100px;
+  }
+  .level-container {
+    flex-direction: column;
+  }
+  .level-container .game-item {
+    width: 90%;
+    margin-bottom: 16px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .navbar-cont {
+    margin: 8px;
+    padding: 10px;
+    width: calc(100% - 16px - 20px);
+    border-radius: 16px;
+  }
+
+  #logo-img {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .list li {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2.5px;
+  }
+
+  main {
+    margin-top: 80px;
+  }
+
+  .title-container {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}

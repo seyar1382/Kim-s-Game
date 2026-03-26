@@ -100,25 +100,6 @@ html {
   border-bottom: 3px solid #ff3b30; /* red underline to indicate selected */
 }
 
-/* Responsive tweaks: tighten spacing and sizes on small screens */
-@media (max-width: 600px) {
-  #logo-img {
-    width: 48px;
-    margin-right: 14px;
-  }
-  .navbar-cont {
-    height: 64px;
-    margin: 12px 16px;
-    padding: 0 12px;
-  }
-  .list ul {
-    gap: 12px;
-  }
-  .list li {
-    font-size: 16px;
-  }
-}
-
 /* ---------body---------------- */
 
 .title-container {
