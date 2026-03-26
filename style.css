@@ -481,6 +481,14 @@ section h1 {
   border-radius: 12px;
   object-fit: cover;
   margin-top: 10px;
+  transition: all 0.3s ease-in-out; /* smooth transition for hover effects */
+}
+
+.intro-container #kim:hover {
+  transform: scale(1.05); /* subtle zoom effect on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white glow effect on hover */
+  rotate: -5deg; /* slight rotation on hover for a dynamic effect */
+  opacity: 0.95; /* slight fade effect on hover for better feedback */
 }
 
 .intro-container #gear {
@@ -542,6 +550,53 @@ section h1 {
 
 #about {
   height: 100vh;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(157, 164, 189, 0.2);
+  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
+  padding: 60px;
+  border-radius: 20px;
+  border-top: 0.5px solid #d2d4d8;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  margin: 30px 100px; /* keep outer spacing from the page edges */
+}
+
+.about-container img {
+  width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out; /* smooth transition for hover effects */
+}
+
+.about-container img:hover {
+  transform: scale(1.05); /* subtle zoom effect on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white glow effect on hover */
+  rotate: -5deg; /* slight rotation on hover for a dynamic effect */
+  opacity: 0.95; /* slight fade effect on hover for better feedback */
+}
+
+.about-wrapper {
+  max-width: 700px;
+}
+
+.about-wrapper h2 {
+  font-size: 28px;
+  text-align: left;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ff3b30; /* red underline for section titles */
+  padding-bottom: 10px;
+}
+
+.about-wrapper p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+  margin-right: 100px;
 }
 
 /* --------------------------contact----------------------------- */
