@@ -363,3 +363,23 @@ function buildHardGame() {
 
 const audioElement = document.querySelector(".audio");
 audioElement.volume = 0.05;
+
+const sendButton = document.getElementById("send-js");
+sendButton.addEventListener("click", () => {
+  const receivedMessage = document.getElementById("received");
+  receivedMessage.textContent =
+    "Thank you for your message! We will get back to you soon.";
+  receivedMessage.style.opacity = "1";
+  receivedMessage.style.display = "block";
+  setTimeout(() => {
+    receivedMessage.style.display = "none";
+  }, 5000);
+});
+
+const navLinks = document.querySelectorAll(".links");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.forEach((nav) => nav.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
