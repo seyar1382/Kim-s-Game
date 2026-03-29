@@ -629,13 +629,32 @@ section h1 {
   line-height: 1.6;
 }
 
+.form-container {
+  display: flex;
+}
+
+.form-container .phone-container {
+  max-width: 400px;
+  margin-right: 40px;
+}
+
+.form-container .phone-container i {
+  font-size: 20px;
+  color: #ff3b30; /* red color for the phone icon */
+  transition: transform 0.3s ease-in-out; /* smooth rotation on hover */
+}
+
+.form-container .phone-container i:hover {
+  transform: rotate(10deg);
+}
+
 .form-container form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1; /* allow form to take up remaining space */
 }
 
-.form-container form input,
 .form-container form input,
 .form-container form textarea {
   border-radius: 10px;
