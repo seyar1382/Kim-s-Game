@@ -49,9 +49,9 @@
   }
   .navbar-cont {
     height: 64px;
-    margin: 12px 100px;
-    padding: 0 12px;
-    width: calc(100% - 225px);
+    margin: 20px 100px;
+    padding: 0 25px;
+    width: calc(100% - 250px);
     /* width: calc(100% - 280px); */
   }
   .list ul {
@@ -60,6 +60,32 @@
   .list li {
     font-size: 16px;
   }
+  main h1 {
+    font-size: 40px;
+  }
+  main h2 {
+    font-size: 18px;
+  }
+  main p,
+  main .level,
+  main .timer,
+  main .timeout-message,
+  main .result-message {
+    font-size: 20px;
+  }
+  main i {
+    font-size: 28px;
+  }
+  main .info span {
+    font-size: 14px;
+  }
+  main .images-container .game-image {
+    width: 100px;
+    height: 100px;
+  }
+  main .game-item {
+    height: auto;
+  }
 }
 
 /* Mobile responsiveness: small phones and tablets */
@@ -67,26 +93,17 @@
   .hamburger {
     display: flex;
   }
-
   .navbar-cont {
     flex-wrap: wrap;
     height: auto;
-    margin: 10px 100px;
+    margin: 15px 50px;
     padding: 12px;
     border-radius: 20px;
+    width: calc(100% - 125px);
   }
-
-  .logo-cont {
-    display: flex;
-    align-items: center;
-    flex: 1;
-  }
-
   #logo-img {
     width: 44px;
-    margin-right: 12px;
   }
-
   .list {
     width: 100%;
     margin-top: 12px;
@@ -95,50 +112,53 @@
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     visibility: hidden;
+    margin-right: 60px;
   }
-
   .list.active {
     max-height: 500px;
     opacity: 1;
     visibility: visible;
   }
-
   .list ul {
     flex-direction: column;
     gap: 0;
     width: 100%;
   }
-
   .list li {
     padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 16px;
   }
-
   .list li:last-child {
     border-bottom: none;
   }
-
-  .list li.active {
-    border-bottom: 3px solid #ff3b30;
-    padding-bottom: 9px;
-  }
-
   .list li a {
     display: block;
   }
-
   .input-js {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
     margin-top: 8px;
   }
 
   /* -------main------- */
-
   main {
-    margin-top: 100px;
+    margin-top: 120px;
+  }
+  main h1 {
+    font-size: 32px;
+    margin-top: 0;
+  }
+  main h2 {
+    font-size: 16px;
+  }
+  main p,
+  main .level,
+  main .timer,
+  main .timeout-message,
+  main .result-message {
+    font-size: 18px;
+  }
+  main .game-container .input-container {
+    grid-template-columns: 1fr;
   }
   .level-container {
     flex-direction: column;
@@ -146,6 +166,12 @@
   .level-container .game-item {
     width: 90%;
     margin-bottom: 16px;
+  }
+  main .game-container .input-container .submit-button {
+    grid-column: span 1;
+  }
+  main .game-container {
+    margin: 0 50px;
   }
 }
 

@@ -106,6 +106,14 @@ html {
   width: 100%; /* expand underline to full width on hover */
 }
 
+.list ul input {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
 /* ---------body---------------- */
 
 .title-container {
@@ -135,8 +143,7 @@ main {
   font-weight: bold;
 }
 
-main h1,
-main h2 {
+main h1 {
   font-size: 45px;
 }
 
@@ -417,7 +424,7 @@ main p {
   }
 }
 
-.easy {
+.level-container .game-item.easy {
   background: linear-gradient(#64b035, #4caf50, #27852b);
 }
 
