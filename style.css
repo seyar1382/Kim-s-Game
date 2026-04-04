@@ -91,13 +91,19 @@ html {
   transition: color 0.3s ease; /* smooth color change on hover */
 }
 
-.list li a:hover {
-  color: #ff3b30; /* red color on hover for better visibility */
+.list li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -5px;
+  background: #ff3b30; /* red underline color */
+  transition: width 0.5s ease-out; /* smooth underline animation */
 }
 
-/* Active/selected nav item */
-.list li.active {
-  border-bottom: 3px solid #ff3b30; /* red underline to indicate selected */
+.list li a:hover::after {
+  width: 100%; /* expand underline to full width on hover */
 }
 
 /* ---------body---------------- */
@@ -121,6 +127,7 @@ html {
 
 main {
   margin-top: 150px;
+  min-height: 100vh;
 }
 
 #memory {
@@ -455,7 +462,7 @@ section h1 {
 #introduction {
   margin-top: 200px;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .intro-container {
@@ -549,7 +556,7 @@ section h1 {
 /* --------------------------About----------------------------- */
 
 #about {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .about-container {
