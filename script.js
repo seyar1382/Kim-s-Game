@@ -26,52 +26,6 @@ if (hamburger) {
   });
 }
 
-/* -------- Scroll Spy for Active Nav Link -------- */
-// const navBarLinks = document.querySelectorAll(".list li a");
-// const mainElement = document.querySelector("main");
-// const sections = document.querySelectorAll("section");
-
-// // Set data-section attribute on main to match the #home href
-// if (mainElement) {
-//   mainElement.setAttribute("data-section", "home");
-// }
-
-// const observerOptions = {
-//   threshold: 0.3,
-//   rootMargin: "0px 0px -70% 0px",
-// };
-
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       // Get the section identifier (from id or data-section)
-//       const sectionId =
-//         entry.target.getAttribute("data-section") || entry.target.id;
-
-//       // Remove active class from all nav items
-//       navBarLinks.forEach((link) => {
-//         link.parentElement.classList.remove("active");
-//       });
-
-//       // Add active class to the corresponding nav item
-//       const activeLink = document.querySelector(
-//         `.list li a[href="#${sectionId}"]`,
-//       );
-//       if (activeLink) {
-//         activeLink.parentElement.classList.add("active");
-//       }
-//     }
-//   });
-// }, observerOptions);
-
-// // Observe main element and all sections
-// if (mainElement) {
-//   observer.observe(mainElement);
-// }
-// sections.forEach((section) => {
-//   observer.observe(section);
-// });
-
 const colorInput = document.querySelector(".input-js");
 
 colorInput.addEventListener("input", (event) => {
@@ -409,17 +363,3 @@ function buildHardGame() {
 
 const audioElement = document.querySelector(".audio");
 audioElement.volume = 0.05;
-
-// const sendButton = document.getElementById("send-js");
-// sendButton.addEventListener("click", () => {
-//   const receivedMessage = document.getElementById("received");
-//   receivedMessage.textContent =
-//     "Thank you for your message! We will get back to you soon.";
-//   receivedMessage.style.opacity = "1";
-//   receivedMessage.style.display = "block";
-//   const contactForm = document.querySelector(".contact-form");
-//   setTimeout(() => {
-//     receivedMessage.style.display = "none";
-//     contactForm.reset();
-//   }, 5000);
-// });

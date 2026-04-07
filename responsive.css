@@ -161,7 +161,7 @@
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     visibility: hidden;
-    /* margin-right: 60px; */
+    margin-right: 60px;
   }
   .list.active {
     max-height: 500px;
@@ -219,6 +219,10 @@
   main .game-container .input-container .submit-button {
     grid-column: span 1;
   }
+  main .images-container .game-image {
+    width: 80px;
+    height: 80px;
+  }
   /* ---intro--- */
   body {
     padding: 0 50px;
@@ -244,5 +248,53 @@
   .about-container .about-wrapper h2,
   .contact-container h2 {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 30px;
+  }
+  .navbar-cont {
+    width: calc(100% - 85px);
+  }
+  main h1 {
+    font-size: 30px;
+  }
+  main p,
+  main .level,
+  main .timer,
+  main .timeout-message,
+  main .result-message {
+    font-size: 16px;
+  }
+  main .images-container .game-image {
+    width: 50px;
+    height: 50px;
+  }
+  .intro-container,
+  .about-container,
+  .contact-container {
+    padding: 20px;
+  }
+  .intro-container #kim,
+  .about-container img {
+    width: 180px;
+  }
+  .intro-container #gear {
+    width: 60px;
+    right: -25px;
+  }
+  section h1 {
+    font-size: 25px;
+  }
+  .content-container h2,
+  .about-container .about-wrapper h2,
+  .contact-container h2 {
+    font-size: 18px;
+  }
+  .content-container,
+  .about-container .about-wrapper {
+    margin-left: 0;
   }
 }

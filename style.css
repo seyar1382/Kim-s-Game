@@ -715,7 +715,6 @@ footer {
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   border-radius: 40px;
-  margin: 30px auto; /* keep outer spacing from the page edges */
-  max-width: 1200px; /* limit max width for better readability */
-  margin-bottom: 100px;
+  margin: 30px auto 100px auto; /* keep outer spacing from the page edges */
+  max-width: 1270px; /* limit max width for better readability */
 }
