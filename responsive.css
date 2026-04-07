@@ -42,35 +42,42 @@
 }
 
 @media (max-width: 1350px) {
-  .intro-container #kim {
+  .intro-container #kim,
+  .about-container img {
     width: 250px;
   }
   .intro-container #gear {
     width: 80px;
     right: -40px;
   }
-  .content-container p {
+  .content-container p,
+  .about-container .about-wrapper p {
     margin-right: 0;
     font-size: 16px;
   }
-  .content-container {
+  .content-container,
+  .about-container .about-wrapper {
     margin-left: 20px;
   }
 }
 
 @media (max-width: 1100px) {
-  .intro-container #kim {
+  .intro-container #kim,
+  .about-container img {
     width: 220px;
   }
   section h1 {
     font-size: 35px;
   }
-  .content-container h2 {
+  .content-container h2,
+  .about-container .about-wrapper h2 {
     font-size: 25px;
   }
-  .content-container p {
+  .content-container p,
+  .about-container .about-wrapper p {
     font-size: 15px;
   }
+  /* ---about--- */
 }
 /* Responsive tweaks: tighten spacing and sizes on tablets */
 @media (max-width: 900px) {
@@ -117,7 +124,8 @@
   main .game-item {
     height: auto;
   }
-  .intro-container {
+  .intro-container,
+  .about-container {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
@@ -210,23 +218,27 @@
     margin: 0 50px;
   }
   /* ---intro--- */
-  .intro-container {
+  .intro-container,
+  .about-container {
     margin: 30px 50px;
   }
-  .intro-container #kim {
+  .intro-container #kim,
+  .about-container img {
     width: 200px;
   }
   .intro-container #gear {
     width: 70px;
     right: -30px;
   }
-  .content-container p {
+  .content-container p,
+  .about-container .about-wrapper p {
     font-size: 14px;
   }
   section h1 {
     font-size: 28px;
   }
-  .content-container h2 {
+  .content-container h2,
+  .about-container .about-wrapper h2 {
     font-size: 20px;
   }
 }
