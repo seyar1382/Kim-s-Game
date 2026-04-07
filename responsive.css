@@ -1,5 +1,3 @@
-/* -----------------navbar----------------- */
-
 /* Hamburger menu button */
 .hamburger {
   display: none;
@@ -70,14 +68,16 @@
     font-size: 35px;
   }
   .content-container h2,
-  .about-container .about-wrapper h2 {
+  .about-container .about-wrapper h2,
+  .contact-container h2 {
     font-size: 25px;
   }
   .content-container p,
-  .about-container .about-wrapper p {
+  .about-container .about-wrapper p,
+  .contact-container p,
+  footer p {
     font-size: 15px;
   }
-  /* ---about--- */
 }
 /* Responsive tweaks: tighten spacing and sizes on tablets */
 @media (max-width: 900px) {
@@ -87,10 +87,9 @@
   }
   .navbar-cont {
     height: 64px;
-    margin: 20px 100px;
+    margin: 20px auto;
     padding: 0 25px;
     width: calc(100% - 250px);
-    /* width: calc(100% - 280px); */
   }
   .list ul {
     gap: 12px;
@@ -130,6 +129,12 @@
     align-items: center;
     text-align: center;
   }
+  .form-container {
+    flex-direction: column;
+  }
+  .form-container .phone-container {
+    max-width: 100%;
+  }
 }
 
 /* Mobile responsiveness: small phones and tablets */
@@ -140,7 +145,7 @@
   .navbar-cont {
     flex-wrap: wrap;
     height: auto;
-    margin: 15px 50px;
+    margin: 15px auto;
     padding: 12px;
     border-radius: 20px;
     width: calc(100% - 125px);
@@ -214,13 +219,9 @@
   main .game-container .input-container .submit-button {
     grid-column: span 1;
   }
-  main .game-container {
-    margin: 0 50px;
-  }
   /* ---intro--- */
-  .intro-container,
-  .about-container {
-    margin: 30px 50px;
+  body {
+    padding: 0 50px;
   }
   .intro-container #kim,
   .about-container img {
@@ -231,59 +232,17 @@
     right: -30px;
   }
   .content-container p,
-  .about-container .about-wrapper p {
+  .about-container .about-wrapper p,
+  .contact-container p,
+  footer p {
     font-size: 14px;
   }
   section h1 {
     font-size: 28px;
   }
   .content-container h2,
-  .about-container .about-wrapper h2 {
+  .about-container .about-wrapper h2,
+  .contact-container h2 {
     font-size: 20px;
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 480px) {
-  .navbar-cont {
-    margin: 8px 20px;
-    padding: 10px;
-    width: calc(100% - 40px);
-    border-radius: 16px;
-  }
-
-  #logo-img {
-    width: 40px;
-    margin-right: 10px;
-  }
-
-  .list li {
-    font-size: 14px;
-    padding: 10px 0;
-  }
-
-  .hamburger span {
-    width: 24px;
-    height: 2.5px;
-  }
-
-  main {
-    margin-top: 80px;
-  }
-
-  main .game-container {
-    margin: 0 20px;
-  }
-
-  .title-container {
-    padding: 0 16px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 16px;
   }
 }

@@ -5,6 +5,7 @@ body {
   color: white;
   font-family: "Inter", sans-serif;
   margin: 0;
+  padding: 0 100px;
 }
 
 h1,
@@ -38,6 +39,7 @@ html {
 }
 
 .navbar-cont {
+  /* max-width: 1200px; limit max width for better readability */
   display: flex;
   position: fixed;
   top: 0;
@@ -50,7 +52,7 @@ html {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   height: 80px;
   width: calc(100% - 280px); /* full width minus horizontal margins */
-  margin: 30px 100px; /* keep outer spacing from the page edges */
+  margin: 30px auto; /* keep outer spacing from the page edges */
   padding: 0 40px; /* inner horizontal padding for consistent spacing */
   border-radius: 40px;
   animation: nav-load 500ms ease-in-out forwards;
@@ -185,18 +187,17 @@ main p {
 }
 
 .game-container {
+  max-width: 1200px; /* limit max width for better readability */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
   background-color: rgba(157, 164, 189, 0.2);
   backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
   padding: 20px;
   border-radius: 20px;
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  /* border-bottom: 1px solid #d2d4d8; */
-  margin: 0 100px; /* horizontal spacing from page edges */
+  margin: 0 auto; /* horizontal spacing from page edges */
   transition: opacity 0.5s ease-out;
 }
 
@@ -483,7 +484,8 @@ section h1 {
   border-radius: 20px;
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px 100px; /* keep outer spacing from the page edges */
+  margin: 30px auto; /* keep outer spacing from the page edges */
+  max-width: 1200px; /* limit max width for better readability */
 }
 
 .kim-wrapper {
@@ -579,7 +581,8 @@ section h1 {
   border-radius: 20px;
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px 100px; /* keep outer spacing from the page edges */
+  margin: 30px auto; /* keep outer spacing from the page edges */
+  max-width: 1200px; /* limit max width for better readability */
 }
 
 .about-container img {
@@ -621,7 +624,8 @@ section h1 {
   border-radius: 20px;
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px 100px; /* keep outer spacing from the page edges */
+  margin: 30px auto; /* keep outer spacing from the page edges */
+  max-width: 1200px; /* limit max width for better readability */
 }
 
 .contact-container p {
@@ -711,6 +715,7 @@ footer {
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   border-radius: 40px;
-  margin: 30px 100px; /* keep outer spacing from the page edges */
+  margin: 30px auto; /* keep outer spacing from the page edges */
+  max-width: 1200px; /* limit max width for better readability */
   margin-bottom: 100px;
 }
