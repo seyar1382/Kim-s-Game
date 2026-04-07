@@ -530,12 +530,15 @@ section h1 {
   max-width: 700px;
 }
 
-.content-container h2 {
+.content-container h2,
+.about-wrapper h2,
+.contact-container h2 {
   font-size: 28px;
   text-align: left;
   margin-bottom: 20px;
   border-bottom: 1px solid #ff3b30; /* red underline for section titles */
   padding-bottom: 10px;
+  margin-top: 0;
 }
 
 .content-container p {
@@ -598,14 +601,6 @@ section h1 {
   max-width: 700px;
 }
 
-.about-wrapper h2 {
-  font-size: 28px;
-  text-align: left;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ff3b30; /* red underline for section titles */
-  padding-bottom: 10px;
-}
-
 .about-wrapper p {
   font-size: 18px;
   line-height: 1.6;
@@ -627,15 +622,6 @@ section h1 {
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   margin: 30px 100px; /* keep outer spacing from the page edges */
-}
-
-.contact-container h2 {
-  font-size: 28px;
-  text-align: left;
-  margin-top: 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ff3b30; /* red underline for section titles */
-  padding-bottom: 10px;
 }
 
 .contact-container p {
