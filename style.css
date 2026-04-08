@@ -32,7 +32,7 @@ html {
 }
 
 #logo-img {
-  width: 60px;
+  width: 90px;
   margin-right: 28px; /* space between logo and links */
   animation: list-item-load 500ms ease-in-out 300ms forwards;
   transform: scale(0);
@@ -611,6 +611,16 @@ section h1 {
   margin-right: 100px;
 }
 
+.about-wrapper p a {
+  color: #ff3b30; /* red color for links */
+  text-decoration: none;
+  transition: color 0.3s ease; /* smooth color change on hover */
+}
+
+.about-wrapper p a:hover {
+  color: #c0392b; /* darker red on hover */
+}
+
 /* --------------------------contact----------------------------- */
 
 #contact {
@@ -645,7 +655,17 @@ section h1 {
 .form-container .phone-container i {
   font-size: 20px;
   color: #ff3b30; /* red color for the phone icon */
-  transition: transform 0.3s ease-in-out; /* smooth rotation on hover */
+  transition: all 0.3s ease-in-out; /* smooth rotation on hover */
+}
+
+.form-container .phone-container a {
+  text-decoration: none;
+  color: inherit; /* inherit color from the parent element */
+  transition: color 0.3s ease; /* smooth color change on hover */
+}
+
+.form-container .phone-container a:hover {
+  color: #ff3b30; /* red color on hover */
 }
 
 .form-container .phone-container i:hover {
@@ -717,4 +737,25 @@ footer {
   border-radius: 40px;
   margin: 30px auto 100px auto; /* keep outer spacing from the page edges */
   max-width: 1270px; /* limit max width for better readability */
+}
+
+footer .footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer .footer-container a {
+  text-decoration: none;
+  color: inherit; /* inherit color from the parent element */
+}
+
+footer .footer-container i {
+  font-size: 35px;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .footer-container i:hover {
+  transform: scale(1.1);
+  color: #ff3b30; /* red color on hover */
 }

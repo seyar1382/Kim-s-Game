@@ -78,11 +78,14 @@
   footer p {
     font-size: 15px;
   }
+  footer .footer-container i {
+    font-size: 30px;
+  }
 }
 /* Responsive tweaks: tighten spacing and sizes on tablets */
 @media (max-width: 900px) {
   #logo-img {
-    width: 48px;
+    width: 80px;
     margin-right: 14px;
   }
   .navbar-cont {
@@ -151,7 +154,7 @@
     width: calc(100% - 125px);
   }
   #logo-img {
-    width: 44px;
+    width: 60px;
   }
   .list {
     width: 100%;
@@ -249,7 +252,12 @@
   .contact-container h2 {
     font-size: 20px;
   }
+  footer .footer-container i {
+    font-size: 25px;
+  }
 }
+
+/* Mobile responsiveness: very small phones */
 
 @media (max-width: 480px) {
   body {
@@ -296,5 +304,12 @@
   .content-container,
   .about-container .about-wrapper {
     margin-left: 0;
+  }
+  footer .footer-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  footer {
+    border-radius: 20px;
   }
 }
