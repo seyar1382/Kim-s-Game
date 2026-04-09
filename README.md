@@ -13,20 +13,20 @@ A browser-based memory game where users are shown a set of items for a limited t
 
 - Randomised item generation
 - Multiple difficulty levels
-- Countdown timer  
-- User input for recall  
+- Countdown timer
+- User input for recall
 - Score tracking and best score system
 - UI animations
-- Sound effects and feedback  
+- Sound effects and feedback
 
 ---
 
 ## 🛠️ Technologies Used
 
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla JS)  
-- Git & GitHub  
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+- Git & GitHub
 
 ---
 
@@ -38,27 +38,27 @@ The game generates a random set of items stored in an array and displays them to
 
 ## ⚠️ Challenges Faced
 
-- Managing game state between rounds  
-- Preventing duplicate items  
-- Resetting the timer and UI correctly  
-- Implementing randomised item generation while avoiding duplicates  
+- Managing game state between rounds
+- Preventing duplicate items
+- Resetting the timer and UI correctly
+- Implementing randomised item generation while avoiding duplicates
 
 ---
 
 ## 📚 What I Learned
 
-- Improved understanding of JavaScript arrays and logic  
-- Strengthened DOM manipulation skills  
-- Gained experience with iterative development  
-- Learned to use Git for version control  
+- Improved understanding of JavaScript arrays and logic
+- Strengthened DOM manipulation skills
+- Gained experience with iterative development
+- Learned to use Git for version control
 
 ---
 
 ## 🔮 Future Improvements
 
-- Convert the project into a full web/mobile application 
-- Add multiplayer functionality 
-- Expand game modes and features  
+- Convert the project into a full web/mobile application
+- Add multiplayer functionality
+- Expand game modes and features
 - Add a leaderboard for players to compete with eachother
 - Implement user authentication (sign up/log in page) to personalise gameplay
 
@@ -73,9 +73,11 @@ Completed as part of coursework, with a focus on building the game logic indepen
 ## 📷 Screenshots
 
 ### Main Screen
+
 ![Main Screen](images/mainscreen.png)
 
 ### Gameplay
+
 ![Gameplay](images/Gameplay.png)
 
 ---
@@ -98,7 +100,5 @@ in your browser.
 
 ## 🔗 Live Demo / Repository
 
-- GitHub: https://github.com/seyar1382/Kim-s-Game  
+- GitHub: https://github.com/seyar1382/Kim-s-Game
 - Live Site: https://seyar1382.github.io/Kim-s-Game/
-
-  
