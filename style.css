@@ -186,18 +186,27 @@ main p {
   }
 }
 
-.game-container {
-  max-width: 1200px; /* limit max width for better readability */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contact-container,
+footer,
+.about-container,
+.intro-container,
+.game-container,
+.other-container {
   background-color: rgba(157, 164, 189, 0.2);
   backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  padding: 20px;
+  padding: 60px;
   border-radius: 20px;
   border-top: 0.5px solid #d2d4d8;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 0 auto; /* horizontal spacing from page edges */
+  margin: 30px auto; /* keep outer spacing from the page edges */
+  max-width: 1200px; /* limit max width for better readability */
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   transition: opacity 0.5s ease-out;
 }
 
@@ -478,14 +487,6 @@ section h1 {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background-color: rgba(157, 164, 189, 0.2);
-  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  padding: 60px;
-  border-radius: 20px;
-  border-top: 0.5px solid #d2d4d8;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px auto; /* keep outer spacing from the page edges */
-  max-width: 1200px; /* limit max width for better readability */
 }
 
 .kim-wrapper {
@@ -575,14 +576,6 @@ section h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(157, 164, 189, 0.2);
-  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  padding: 60px;
-  border-radius: 20px;
-  border-top: 0.5px solid #d2d4d8;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px auto; /* keep outer spacing from the page edges */
-  max-width: 1200px; /* limit max width for better readability */
 }
 
 .about-container img {
@@ -625,17 +618,6 @@ section h1 {
 
 #contact {
   margin-bottom: 100px;
-}
-
-.contact-container {
-  background-color: rgba(157, 164, 189, 0.2);
-  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  padding: 60px;
-  border-radius: 20px;
-  border-top: 0.5px solid #d2d4d8;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px auto; /* keep outer spacing from the page edges */
-  max-width: 1200px; /* limit max width for better readability */
 }
 
 .contact-container p {
@@ -730,10 +712,6 @@ section h1 {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: rgba(157, 164, 189, 0.2);
-  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  border-top: 0.5px solid #d2d4d8;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   border-radius: 40px;
   margin: 30px auto 100px auto; /* keep outer spacing from the page edges */
   max-width: 1270px; /* limit max width for better readability */
@@ -758,4 +736,37 @@ footer .footer-container i {
 footer .footer-container i:hover {
   transform: scale(1.1);
   color: #ff3b30; /* red color on hover */
+}
+
+footer .footer-container .other-links a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+footer .footer-container .other-links a:hover {
+  color: #ff3b30; /* red color on hover for other links */
+}
+
+/* ----other styles----- */
+.other-container {
+  margin: 60px auto;
+  max-width: 800px; /* limit max width for better readability */
+}
+.other-container p {
+  font-size: 18px;
+}
+.other-container h1,
+.other-container h2 {
+  text-align: left;
+}
+.other-container h1 {
+  border-bottom: 1px solid #ff3b30;
+  margin-top: 0;
+}
+.other-container h2 {
+  font-size: 34px;
+}
+.other-container a {
+  color: #ff3b30;
+  text-decoration: none;
 }

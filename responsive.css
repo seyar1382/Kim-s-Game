@@ -241,7 +241,8 @@
   .content-container p,
   .about-container .about-wrapper p,
   .contact-container p,
-  footer p {
+  footer p,
+  footer .footer-container .other-links a {
     font-size: 14px;
   }
   section h1 {
@@ -254,6 +255,13 @@
   }
   footer .footer-container i {
     font-size: 25px;
+  }
+  footer .footer-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  footer {
+    border-radius: 20px;
   }
 }
 
@@ -304,12 +312,5 @@
   .content-container,
   .about-container .about-wrapper {
     margin-left: 0;
-  }
-  footer .footer-container {
-    flex-direction: column;
-    gap: 12px;
-  }
-  footer {
-    border-radius: 20px;
   }
 }
