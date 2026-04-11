@@ -29,6 +29,12 @@
 
       gtag("config", "G-5JM4D7DM56", { anonymize_ip: true });
     </script>
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4756297821491649"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="responsive.css" />
@@ -49,8 +55,11 @@
       <nav>
         <div class="navbar-cont">
           <div class="logo-cont">
-            <a href="index.html"
-              ><img id="logo-img" src="images/kg-logo.png" alt="mind logo"
+            <a href="/"
+              ><img
+                id="logo-img"
+                src="images/kg-logo.png"
+                alt="Kim's Game Home"
             /></a>
           </div>
           <div class="hamburger" id="hamburger">
@@ -114,9 +123,10 @@
           <img
             id="kim"
             src="images/kimsGame.JPEG"
-            alt="image of random items"
+            alt="random items used in Kim's Game memory challenge"
+            loading="lazy"
           />
-          <img id="gear" src="images/gear.png" alt="gear image" />
+          <img id="gear" src="images/gear.png" alt="" loading="lazy" />
         </div>
         <div class="content-container fade-in">
           <h2>How to Play</h2>
@@ -141,7 +151,8 @@
           title="Rudyard Kipling"
           class="fade-in"
           src="images/Rudyard_Kipling_(portrait).jpg"
-          alt="image of Rudyard Kipling"
+          alt="Rudyard Kipling, author of Kim's Game inspiration"
+          loading="lazy"
         />
         <div class="about-wrapper fade-in">
           <h2>History of Kim's Game</h2>
@@ -162,9 +173,10 @@
               href="https://en.wikipedia.org/wiki/Kim%27s_Game"
               target="_blank"
               rel="noopener noreferrer"
-              >here</a
+              aria-label="Kim's Game Wikipedia"
+              >Kim's Game Wikipedia page</a
             >
-            to read more about the history of Kim's Game.
+            to read more about its history.
           </p>
         </div>
       </div>
@@ -231,12 +243,14 @@
             href="https://github.com/seyar1382"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             ><i class="fa-brands fa-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/mso2831/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
         </span>
