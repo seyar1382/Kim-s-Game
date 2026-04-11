@@ -100,7 +100,8 @@
   .list li {
     font-size: 16px;
   }
-  main h1 {
+  main h1,
+  .other-container h1 {
     font-size: 40px;
   }
   main h2 {
@@ -137,6 +138,15 @@
   }
   .form-container .phone-container {
     max-width: 100%;
+  }
+  .other-container {
+    padding: 40px;
+  }
+  .other-container p {
+    font-size: 16px;
+  }
+  .other-container h2 {
+    font-size: 30px;
   }
 }
 
@@ -242,15 +252,18 @@
   .about-container .about-wrapper p,
   .contact-container p,
   footer p,
-  footer .footer-container .other-links a {
+  footer .footer-container .other-links a,
+  .other-container p {
     font-size: 14px;
   }
-  section h1 {
+  section h1,
+  .other-container h1 {
     font-size: 28px;
   }
   .content-container h2,
   .about-container .about-wrapper h2,
-  .contact-container h2 {
+  .contact-container h2,
+  .other-container h2 {
     font-size: 20px;
   }
   footer .footer-container i {
@@ -277,6 +290,9 @@
   main h1 {
     font-size: 30px;
   }
+  .other-container h1 {
+    font-size: 26px;
+  }
   main p,
   main .level,
   main .timer,
@@ -290,7 +306,8 @@
   }
   .intro-container,
   .about-container,
-  .contact-container {
+  .contact-container,
+  .other-container {
     padding: 20px;
   }
   .intro-container #kim,
