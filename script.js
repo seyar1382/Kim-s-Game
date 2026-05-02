@@ -203,10 +203,10 @@ function displayResults(submitButton) {
   submitButton.addEventListener("click", () => {
     clickAudio.play();
     const inputs = document.querySelectorAll(".game-input");
-    const userInputs = Array.from(inputs).map((input) =>
-      input.value.trim().toLowerCase(),
-    );
-    const uniqueUserAnswers = new Set(userInputs);
+    const userInputs = Array.from(inputs)
+      .filter((input) => input.value.trim() !== "" && isNaN(input.value.trim())) // Filter out empty inputs and number inputs
+      .map((input) => input.value.trim().toLowerCase());
+    const uniqueUserAnswers = new Set(userInputs); // Use a Set to store unique user answers and filter out duplicates
     let score = 0;
     uniqueUserAnswers.forEach((userAnswer) => {
       // Check if the user's answer is included in the currentCorrectAnswers array and increment the score if it is correct
@@ -257,7 +257,7 @@ function displayResults(submitButton) {
     titleElement.appendChild(bestScoreMessage);
 
     displayCorrectAnswers();
-    displayUserAnswers(userInputs);
+    displayUserAnswers(uniqueUserAnswers);
 
     const playAgainButton = document.createElement("button");
     playAgainButton.textContent = "Play Again";
@@ -287,28 +287,25 @@ function displayCorrectAnswers() {
   gameContainer.appendChild(correctAnswers);
 }
 // The displayUserAnswers function creates a new div element to display the user's answers from the current game session. It filters out any empty answers, capitalizes each answer, and appends them to the user answers container. It also checks if each user answer is correct by comparing it to the currentCorrectAnswers array and applies different background colors for correct and incorrect answers. Finally, it appends the user answers container to the game container for display.
-function displayUserAnswers(userInputs) {
+function displayUserAnswers(uniqueUserAnswers) {
   const userAnswersContainer = document.createElement("div");
   userAnswersContainer.classList.add("user-answers");
   const userAnswersTitle = document.createElement("h2");
   userAnswersTitle.textContent = "Your Answers:";
   userAnswersTitle.classList.add("user-answers-title");
   userAnswersContainer.appendChild(userAnswersTitle);
-  userInputs
-    .filter((answer) => answer !== "")
-    .forEach((answer) => {
-      const answerItem = document.createElement("p");
-      const capitalizedAnswer =
-        answer.charAt(0).toUpperCase() + answer.slice(1);
-      answerItem.textContent = capitalizedAnswer;
-      answerItem.classList.add("user-answer-item");
-      userAnswersContainer.appendChild(answerItem);
-      if (currentCorrectAnswers.includes(answer)) {
-        answerItem.style.backgroundColor = "#3498db";
-      } else {
-        answerItem.style.backgroundColor = "#ff3b30";
-      }
-    });
+  uniqueUserAnswers.forEach((answer) => {
+    const answerItem = document.createElement("p");
+    const capitalizedAnswer = answer.charAt(0).toUpperCase() + answer.slice(1);
+    answerItem.textContent = capitalizedAnswer;
+    answerItem.classList.add("user-answer-item");
+    userAnswersContainer.appendChild(answerItem);
+    if (currentCorrectAnswers.includes(answer)) {
+      answerItem.style.backgroundColor = "#3498db";
+    } else {
+      answerItem.style.backgroundColor = "#ff3b30";
+    }
+  });
   const gameContainer = document.querySelector(".game-container");
   gameContainer.appendChild(userAnswersContainer);
 }
