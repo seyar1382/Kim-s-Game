@@ -38,21 +38,32 @@ html {
   transform: scale(0);
 }
 
+.contact-container,
+footer,
+.about-container,
+.intro-container,
+.game-container,
+.other-container,
 .navbar-cont {
-  /* max-width: 1200px; limit max width for better readability */
+  background-color: rgba(157, 164, 189, 0.2);
+  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
+  padding: 60px;
+  border-radius: 20px;
+  border-top: 0.5px solid #d2d4d8;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  margin: 30px auto; /* keep outer spacing from the page edges */
+  max-width: 1200px; /* limit max width for better readability */
+}
+
+.navbar-cont {
   display: flex;
   position: fixed;
   top: 0;
   z-index: 1000; /* ensure navbar is above other content */
   align-items: center;
   justify-content: space-between; /* logo left, links right */
-  background-color: rgba(157, 164, 189, 0.2);
-  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  border-top: 0.5px solid #d2d4d8;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   height: 80px;
   width: calc(100% - 280px); /* full width minus horizontal margins */
-  margin: 30px auto; /* keep outer spacing from the page edges */
   padding: 0 40px; /* inner horizontal padding for consistent spacing */
   border-radius: 40px;
   animation: nav-load 500ms ease-in-out forwards;
@@ -119,7 +130,7 @@ html {
 /* ---------body---------------- */
 
 .title-container {
-  animation: title-load 400ms ease-in-out 800ms forwards;
+  animation: title-load 400ms ease-in-out 400ms forwards;
   opacity: 0;
   transform: translateY(-50px);
 }
@@ -184,22 +195,6 @@ main p {
     transform: scale(1);
     color: white;
   }
-}
-
-.contact-container,
-footer,
-.about-container,
-.intro-container,
-.game-container,
-.other-container {
-  background-color: rgba(157, 164, 189, 0.2);
-  backdrop-filter: blur(10px); /* subtle blur for a frosted glass effect */
-  padding: 60px;
-  border-radius: 20px;
-  border-top: 0.5px solid #d2d4d8;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
-  margin: 30px auto; /* keep outer spacing from the page edges */
-  max-width: 1200px; /* limit max width for better readability */
 }
 
 .game-container {
@@ -350,7 +345,6 @@ footer,
 }
 
 .user-answers .user-answer-item {
-  background-color: #3498db; /* blue background for user answers */
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
@@ -401,7 +395,7 @@ footer,
 }
 
 #level-title {
-  animation: title-load 400ms ease-in-out 1000ms forwards;
+  animation: title-load 400ms ease-in-out 500ms forwards;
   opacity: 0;
   transform: translateY(-50px);
 }
@@ -413,7 +407,7 @@ footer,
   text-align: center;
   height: 250px;
   transition: transform 0.3s ease-in-out; /* smooth transition for the zoom effect */
-  animation: game-item-load 500ms ease-in-out 1200ms forwards;
+  animation: game-item-load 500ms ease-in-out 600ms forwards;
   translate: 0 5rem;
   scale: 0.8;
   filter: blur(5px) opacity(0) saturate(0) brightness(0.1);
@@ -424,13 +418,11 @@ footer,
     translate: 0 5rem;
     scale: 0.8;
     filter: blur(5px) opacity(0) saturate(0) brightness(0.1);
-    /* height: 50px; */
   }
   to {
     translate: 0 0;
     filter: none;
     scale: 1;
-    /* height: 250px; */
   }
 }
 
