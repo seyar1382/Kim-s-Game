@@ -353,12 +353,12 @@ function buildMediumGame() {
   gameContainer.innerHTML = `
     <p>Medium Level: Memorize the following 8 items</p>
   `;
-  timer(15);
+  timer(16);
   displayImages(8);
   setTimeout(() => {
     gameContainer.innerHTML = "";
     timeOut(8);
-  }, 15000);
+  }, 16000);
 }
 
 function buildHardGame() {
@@ -366,10 +366,10 @@ function buildHardGame() {
   gameContainer.innerHTML = `
     <p>Hard Level: Memorize the following 10 items</p>
   `;
-  timer(10);
+  timer(12);
   displayImages(10);
   setTimeout(() => {
     gameContainer.innerHTML = "";
     timeOut(10);
-  }, 10000);
+  }, 12000);
 }
