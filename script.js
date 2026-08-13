@@ -53,6 +53,9 @@ clickAudio.volume = 0.2; // Set the volume of the click audio to 0.2 (20% of the
 const audioElement = document.querySelector(".audio");
 audioElement.volume = 0.05;
 
+const timerAudio = new Audio("audio/timer.mp3");
+timerAudio.volume = 0.2;
+
 // When the difficulty buttons are clicked, play the click audio, add a fade-out class to the game container, and after a short delay using setTimeout, play the background music, clear the game container, remove the fade-out class, and build the game based on the selected difficulty level (easy, medium, or hard)
 document.querySelector(".easy-js").addEventListener("click", () => {
   clickAudio.play();
@@ -318,7 +321,6 @@ function timer(count) {
   gameContainer.appendChild(timerParagraph);
   const timerElement = document.querySelector(".timer");
   let timeLeft = count;
-  const timerAudio = new Audio("audio/timer.mp3");
   let audioStarted = false;
   const timer = setInterval(() => {
     timeLeft--;
@@ -373,3 +375,23 @@ function buildHardGame() {
     timeOut(10);
   }, 12000);
 }
+
+let isAudioPlaying = false; // Initialize a variable to track whether the audio is currently playing or not
+let isTimerAudioPlaying = false; // Initialize a variable to track whether the timer audio is currently playing or not
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    isAudioPlaying = !audioElement.paused;
+    isTimerAudioPlaying = !timerAudio.paused;
+
+    audioElement.pause();
+    timerAudio.pause();
+  } else {
+    if (isAudioPlaying) {
+      audioElement.play();
+    }
+    if (isTimerAudioPlaying) {
+      timerAudio.play();
+    }
+  }
+});
